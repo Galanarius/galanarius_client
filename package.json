@@ -10,11 +10,16 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
   },
+  "main": "public/electron.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "run": "electron .",
+    "start": "rescripts start",
+    "build": "rescripts build",
+    "test": "rescripts test",
+    "eject": "rescripts eject",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -25,10 +30,40 @@
       "not dead",
       "not op_mini all"
     ],
+    "reactscripts": [
+      "env"
+    ],
+    "homepage": "./",
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rescripts/cli": "0.0.13",
+    "@rescripts/rescript-env": "0.0.11",
+    "electron": "^8.0.3"
+  },
+
+  "author": {
+    "name": "Jonah McConnell",
+    "email": "jonahmc1014@gmail.com",
+    "url": "https://google.com/"
+  },
+  "build": {
+    "appId": "",
+    "productName": "Galanarius",
+    "copyright": "",
+    "mac": {
+      "category": ""
+    },
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
   }
 }
