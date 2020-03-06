@@ -7,14 +7,22 @@ const BrowserWindow = electron.BrowserWindow;
 let mainWindow;
 
 function createWindow() {
-  mainWindow = new BrowserWindow({width: 900, height: 680});
+  mainWindow = new BrowserWindow({
+    width: 900, 
+    height: 680, 
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
+  mainWindow.loadFile('index.html');
   mainWindow.loadURL('http://localhost:3000');
+  
   mainWindow.on('closed', () => mainWindow = null);
 }
 
 function loadMenu(){
   const menuTemp = [
-    {
+    /*{
       label: 'Home',
       click: () => {
         
@@ -49,7 +57,7 @@ function loadMenu(){
       click: () => {
         
       }
-    }
+    }*/
   ]
   const menu = electron.Menu.buildFromTemplate(menuTemp);
   electron.Menu.setApplicationMenu(menu);
