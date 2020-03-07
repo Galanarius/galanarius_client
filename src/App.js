@@ -8,8 +8,8 @@ class App extends React.Component{
     this.state = {
       discord_id: "-1",
       profile: {},
-        page_id: "home",
-        page: this.Home(),
+      page_id: "home",
+      page: this.Home(),
     }
   }
 
@@ -34,7 +34,7 @@ class App extends React.Component{
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo"/>
           <p>
-            {this.Home()}
+            {this.state.page}
           </p>
         </header>
       </div>
@@ -42,27 +42,27 @@ class App extends React.Component{
   }
 
   setPage_home(props){
-    this.setState({page: this.Home()});
+    this.setState({page_id: "home", page: this.Home()});
   }
 
   setPage_login(props){
-    this.setState({page: this.Login()});
+    this.setState({page_id: "login", page: this.Login()});
   }
 
   setPage_about(props){
-    this.setState({page: this.About()});
+    this.setState({page_id: "about", page: this.About()});
   }
 
   setPage_profile(props){
-    this.setState({page: this.Profile()});
+    this.setState({page_id: "profile", page: this.Profile()});
   }
 
   setPage_maps(props){
-    this.setState({page: this.Maps()});
+    this.setState({page_id: "maps", page: this.Maps()});
   }
 
   setPage_actions(props){
-    this.setState({page: this.Actions()});
+    this.setState({page_id: "actions", page: this.Actions()});
   }
   
   Home(props){
@@ -72,11 +72,7 @@ class App extends React.Component{
           <div className="home">
             Home
           </div>
-          <button type="button"className="tabs" id="login_button" onclick={this.setPage_login}>Log In</button>
-          <button type="button"className="tabs" id="about_button" onclick={this.setPage_about}>About</button>
-          <button type="button"className="tabs" id="profile_button" onclick={this.setPage_profile}>Profile</button>
-          <button type="button"className="tabs" id="maps_button" onclick={this.setPage_maps}>Maps</button>
-          <button type="button"className="tabs" id="actions_button" onclick={this.setPage_actions}>Actions</button>
+          {this.Menu(props)}
         </p>
       </div>
     );
@@ -88,11 +84,7 @@ class App extends React.Component{
         <p className="login">
           Log In
         </p>
-          <button type="button"className="tabs-home" id="home_button" onclick={this.setPage_home}>Home</button>
-          <button type="button"className="tabs" id="about_button" onclick={this.setPage_about}>About</button>
-          <button type="button"className="tabs" id="profile_button" onclick={this.setPage_profile}>Profile</button>
-          <button type="button"className="tabs" id="maps_button" onclick={this.setPage_maps}>Maps</button>
-          <button type="button"className="tabs" id="actions_button" onclick={this.setPage_actions}>Actions</button>
+        {this.Menu(props)}
       </div>
     );
   }
@@ -103,11 +95,7 @@ class App extends React.Component{
         <p className="about">
           About
         </p>
-          <button type="button"className="tabs" id="login_button" onclick={this.setPage_home}>Log In</button>
-          <button type="button"className="tabs-home" id="home_button" onclick={this.setPage_login}>Home</button>
-          <button type="button"className="tabs" id="profile_button" onclick={this.setPage_profile}>Profile</button>
-          <button type="button"className="tabs" id="maps_button" onclick={this.setPage_maps}>Maps</button>
-          <button type="button"className="tabs" id="actions_button" onclick={this.setPage_actions}>Actions</button>
+        {this.Menu(props)}
       </div>
     );
   }
@@ -118,11 +106,7 @@ class App extends React.Component{
         <p className="profile">
           Profile
         </p>
-          <button type="button"className="tabs" id="login_button" onclick={this.setPage_home}>Log In</button>
-          <button type="button"className="tabs" id="about_button" onclick={this.setPage_about}>About</button>
-          <button type="button"className="tabs-home" id="home_button" onclick={this.setPage_login}>Home</button>
-          <button type="button"className="tabs" id="maps_button" onclick={this.setPage_maps}>Maps</button>
-          <button type="button"className="tabs" id="actions_button" onclick={this.setPage_actions}>Actions</button>
+        {this.Menu(props)}
       </div>
     );
   }
@@ -133,11 +117,7 @@ class App extends React.Component{
         <p className="maps">
           Maps
         </p>
-          <button type="button"className="tabs" id="login_button" onclick={this.setPage_home}>Log In</button>
-          <button type="button"className="tabs" id="about_button" onclick={this.setPage_about}>About</button>
-          <button type="button"className="tabs" id="profile_button" onclick={this.setPage_profile}>Profile</button>
-          <button type="button"className="tabs-home" id="home_button" onclick={this.setPage_login}>Home</button>
-          <button type="button"className="tabs" id="actions_button" onclick={this.setPage_actions}>Actions</button>
+        {this.Menu(props)}
       </div>
     );
   }
@@ -148,11 +128,20 @@ class App extends React.Component{
         <p className="actions">
           Actions
         </p>
-          <button type="button"className="tabs" id="login_button" onclick={this.setPage_home}>Log In</button>
-          <button type="button"className="tabs" id="about_button" onclick={this.setPage_about}>About</button>
-          <button type="button"className="tabs" id="profile_button" onclick={this.setPage_profile}>Profile</button>
-          <button type="button"className="tabs" id="maps_button" onclick={this.setPage_maps}>Maps</button>
-          <button type="button"className="tabs-home" id="home_button" onclick={this.setPage_login}>Home</button>
+        {this.Menu(props)}
+      </div>
+    );
+  }
+
+  Menu(props){
+    return(
+      <div>
+        <button type="button"className="tabs-home" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+        <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+        <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+        <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+        <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+        <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
       </div>
     );
   }
