@@ -38,10 +38,41 @@
   }
 }
 
-.Home-title{
+.home{
   background-color: #c5a7db;
   justify-content: center;
   font-size: 60px;
   color: #b54fff;
   text-decoration: underline;
+  margin-bottom: 20px;
+}
+
+.tabs{
+  all: unset;
+  background-color: #c5a7db;
+  color: #9e16ff;
+
+  font-size: 30px;
+  justify-content: center;
+  text-decoration: none;
+  
+  border-color: #4c0083;
+  border-width: 6px;
+  border-style: ridge;
+  border-radius: 18px 0px 18px 0px;
+}
+
+.tabs-home{
+  all: unset;
+  background-color: #927ca1;
+  color: #6a0fac;
+
+  font-size: 30px;
+  justify-content: center;
+  text-decoration: none;
+  
+  border-color: #35005a;
+  border-width: 6px;
+  border-style: ridge;
+  border-radius: 18px 0px 18px 0px;
 }

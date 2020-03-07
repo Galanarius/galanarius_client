@@ -4,7 +4,10 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(new App().App(), document.getElementById('root'));
+function tick(){
+    ReactDOM.render(<App/>, document.getElementById('root'));   
+}
+setInterval(tick, 500);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
