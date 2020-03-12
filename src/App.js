@@ -68,12 +68,11 @@ class App extends React.Component{
   Home(props){
     return(
       <div>
-        <p>
-          <div className="home">
+        <p className="menu_title">
             Home
-          </div>
-          {this.Menu(props)}
+          
         </p>
+        {this.Menu(props, 0)}
       </div>
     );
   }
@@ -81,10 +80,10 @@ class App extends React.Component{
   Login(props){
     return(
       <div>
-        <p className="login">
+        <p className="menu_title">
           Log In
         </p>
-        {this.Menu(props)}
+        {this.Menu(props, 1)}
       </div>
     );
   }
@@ -92,10 +91,10 @@ class App extends React.Component{
   About(props){
     return(
       <div>
-        <p className="about">
+        <p className="menu_title">
           About
         </p>
-        {this.Menu(props)}
+        {this.Menu(props, 2)}
       </div>
     );
   }
@@ -103,10 +102,10 @@ class App extends React.Component{
   Profile(props){
     return(
       <div>
-        <p className="profile">
+        <p className="menu_title">
           Profile
         </p>
-        {this.Menu(props)}
+        {this.Menu(props, 3)}
       </div>
     );
   }
@@ -114,10 +113,10 @@ class App extends React.Component{
   Maps(props){
     return(
       <div>
-        <p className="maps">
+        <p className="menu_title">
           Maps
         </p>
-        {this.Menu(props)}
+        {this.Menu(props, 4)}
       </div>
     );
   }
@@ -125,25 +124,94 @@ class App extends React.Component{
   Actions(props){
     return(
       <div>
-        <p className="actions">
+        <p className="menu_title">
           Actions
         </p>
-        {this.Menu(props)}
+        {this.Menu(props, 5)}
       </div>
     );
   }
 
-  Menu(props){
-    return(
-      <div>
-        <button type="button"className="tabs-home" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
-        <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
-        <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
-        <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
-        <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
-        <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-      </div>
-    );
+  Menu(props, empha){
+    switch(empha){
+      case 0:
+      return(
+        <div>
+          <button type="button"className= "tabs-empha" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+        </div>
+      );
+      case 1:
+        return(
+          <div>
+            <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs-empha" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+      case 2:
+        return(
+          <div>
+            <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs-empha" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+      case 3:
+        return(
+          <div>
+            <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs-empha" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+      case 4:
+        return(
+          <div>
+            <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs-empha" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+      case 5:
+        return(
+          <div>
+            <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs-empha" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+      default:
+        return(
+          <div>
+            <button type="button"className= "tabs-empha" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+            <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+            <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+            <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+            <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+            <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
+          </div>
+        );
+    }
   }
   
   /*GalanERR(){
