@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 
 class App extends React.Component{
@@ -31,12 +30,7 @@ class App extends React.Component{
   render(){
     return(
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <p>
-            {this.state.page}
-          </p>
-        </header>
+        {this.state.page}
       </div>
     );
   }
@@ -68,19 +62,76 @@ class App extends React.Component{
   Home(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
             Home
-          
         </p>
         {this.Menu(props, 0)}
+        {this.HomeLeft(props)}
+        {this.HomeRight(props)}
       </div>
     );
+  }
+
+  HomeLeft(props){
+    return(
+      <span className="content-container-left">
+        {this.UpdatesLog(props)}
+        {this.HotActions(props)}
+      </span>
+    );
+  }
+
+  UpdatesLog(props){
+    return(
+      <span className="content-container-left">
+        <p className="content-title">
+          Updates Log
+        </p>
+        <p className="NYI">
+          Not Yet Implemented.
+        </p>
+      </span>
+    )
+  }
+
+  HotActions(props){
+    return(
+      <span className="content-container-left">
+        <p className="content-title">
+          Quick Actions
+        </p>
+        <p className="NYI">
+          Not Yet Implemented.
+        </p>
+      </span>
+    )
+  }
+
+  HomeRight(props){
+    return(
+      <span className="content-container-right">
+          {this.Changelog(props)}
+      </span>
+    );
+  }
+
+  Changelog(props){
+    return(
+      <span className="content-container-right">
+        <p className="content-title">
+          Changelog
+        </p>
+        <p className="NYI">
+          Not Yet Implemented.
+        </p>
+      </span>
+    )
   }
   
   Login(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
           Log In
         </p>
         {this.Menu(props, 1)}
@@ -91,7 +142,7 @@ class App extends React.Component{
   About(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
           About
         </p>
         {this.Menu(props, 2)}
@@ -102,7 +153,7 @@ class App extends React.Component{
   Profile(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
           Profile
         </p>
         {this.Menu(props, 3)}
@@ -113,7 +164,7 @@ class App extends React.Component{
   Maps(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
           Maps
         </p>
         {this.Menu(props, 4)}
@@ -124,7 +175,7 @@ class App extends React.Component{
   Actions(props){
     return(
       <div>
-        <p className="menu_title">
+        <p className="menu-title">
           Actions
         </p>
         {this.Menu(props, 5)}
@@ -136,80 +187,122 @@ class App extends React.Component{
     switch(empha){
       case 0:
       return(
-        <div>
+        <span className="tabs-outer">
           <button type="button"className= "tabs-empha" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
           <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
           <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
           <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
           <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
           <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-        </div>
+          
+        </span>
       );
       case 1:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs-empha" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
       case 2:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs-empha" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
       case 3:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs-empha" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
       case 4:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs-empha" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
       case 5:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs-empha" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
       default:
         return(
-          <div>
+          <span className="tabs-outer">
             <button type="button"className= "tabs-empha" id="home_button" onClick={(e) => this.setPage_home(props, e)}>Home</button>
+          
             <button type="button"className="tabs" id="login_button" onClick={(e) => this.setPage_login(props, e)}>Log In</button>
+          
             <button type="button"className="tabs" id="about_button" onClick={(e) => this.setPage_about(props, e)}>About</button>
+          
             <button type="button"className="tabs" id="profile_button" onClick={(e) => this.setPage_profile(props, e)}>Profile</button>
+          
             <button type="button"className="tabs" id="maps_button" onClick={(e) => this.setPage_maps(props, e)}>Maps</button>
+          
             <button type="button"className="tabs" id="actions_button" onClick={(e) => this.setPage_actions(props, e)}>Actions</button>
-          </div>
+          
+          </span>
         );
     }
   }

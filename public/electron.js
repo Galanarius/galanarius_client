@@ -12,7 +12,8 @@ function createWindow() {
     height: 680, 
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    backgroundColor: '#c5a7db'
   });
   mainWindow.loadFile('index.html');
   mainWindow.loadURL('http://localhost:3000');

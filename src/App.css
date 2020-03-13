@@ -1,6 +1,7 @@
 
 .App {
   text-align: center;
+  background-color: #c5a7db;
 }
 
 .App-logo {
@@ -38,13 +39,14 @@
   }
 }
 
-.menu_title{
+.menu-title{
   background-color: #c5a7db;
   justify-content: center;
   font-size: 60px;
   color: #b54fff;
   text-decoration: underline;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .tabs{
@@ -53,13 +55,36 @@
   color: #9e16ff;
 
   font-size: 30px;
-  justify-content: center;
-  text-decoration: none;
+  margin: 4px;
+  text-decoration: none;  
+
+  position:relative;
+  border:6px solid #4c0083; 
+  display: inline-block;
+}
+
+.tabs:before{
+  position:absolute; left:-1px; top:-1px; content:'';
+  border-top: 10px solid #4c0083;
+  border-right: 10px solid transparent;
+}
+
+.tabs:after{
+  position:absolute; left:-6px; top:-6px; content:'';
+  border-top: 10px solid #9e16ff;
+  border-right: 10px solid transparent;
+}
   
-  border-color: #4c0083;
-  border-width: 6px;
-  border-style: ridge;
-  border-radius: 18px 0px 18px 0px;
+.tabs-outer{
+  all: unset;
+  background-color: #9e16ff;
+  font-size: 30px;
+  border:6px solid #4c0083;
+  padding: 0;
+  margin: 0;
+  top: 0px;
+  display: flex;
+  position: fixed;
 }
 
 .tabs-empha{
@@ -68,6 +93,7 @@
   color: #6a0fac;
 
   font-size: 30px;
+  margin: 4px;
   justify-content: center;
   text-decoration: none;
   
@@ -75,4 +101,32 @@
   border-width: 6px;
   border-style: ridge;
   border-radius: 18px 0px 18px 0px;
+}
+
+.content-title{
+  font-size: 30px;
+  color: #b54fff;
+  text-decoration: underline;
+}
+
+.content-container-left{
+  all: unset;
+  background-color: #9e16ff;
+  border:6px solid #4c0083;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.content-container-right{
+  all: unset;
+  background-color: #9e16ff;
+  border:6px solid #4c0083;
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+.NYI{
+  color: #4c0083;
 }
